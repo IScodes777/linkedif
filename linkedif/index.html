@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linkedif | Rede Institucional de Projetos - Tema Dinâmico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="stayle.css">
+</head>
+<body data-theme="light">
+    <header class="top-header">
+        <div class="container">
+            <div class="left">
+                <a href="#" class="logo">
+                    <i class="fas fa-network-wired"></i> Link<span>dif</span>
+                </a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquisar projetos, pessoas..." aria-label="Pesquisar no Linkedif" />
+            </div>
+            <nav role="navigation" aria-label="Navegação Principal">
+                <a href="#" class="active nav-item" aria-current="page"><i class="fas fa-home"></i>Início</a>
+                
+                <a href="#" class="rede-link nav-item" id="rede-toggle">
+                    <i class="fas fa-network-wired"></i>Rede
+                    <div class="popup rede-popup" aria-hidden="true">
+                        <div class="popup-header">Sua Rede</div>
+                        <div class="popup-body">
+                            <div class="notification-item">Pessoas para Conectar: Encontre colegas por curso/campus.</div>
+                            <div class="notification-item">Grupos de Pesquisa: Acesse e participe de comunidades temáticas.</div>
+                            <a href="#" class="view-all">Ver Mais Sugestões</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="projetos-link nav-item" id="projetos-toggle">
+                    <i class="fas fa-lightbulb"></i>Projetos
+                    <div class="popup projetos-popup" aria-hidden="true">
+                        <div class="popup-header">Buscar Projetos</div>
+                        <div class="popup-body">
+                            <div class="notification-item">Oportunidades: Bolsas PIBIC, TCCs e Vagas de Recrutamento.</div>
+                            <div class="notification-item">Filtros: Pesquise por área (Tecnologia, Sustentabilidade, etc.).</div>
+                            <a href="#" class="view-all">Acessar Banco de Projetos</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="messages-link nav-item" id="messages-toggle">
+                    <i class="fas fa-envelope"></i>Mensagens
+                    <div class="popup messages-popup" aria-hidden="true">
+                        <div class="popup-header">Mensagens</div>
+                        <div class="popup-body">
+                            <p class="empty-state">Sem novas conversas.</p>
+                            <a href="#" class="view-all">Ver todas as Mensagens</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="notifications-link nav-item" id="notifications-toggle">
+                    <i class="fas fa-bell"></i>Notificações
+                    <div class="popup notifications-popup" aria-hidden="true">
+                        <div class="popup-header">Notificações Recentes</div>
+                        <div class="popup-body">
+                            <div class="notification-item">Prof. Lúcia reagiu à sua postagem.</div>
+                            <div class="notification-item">Novo comentário no projeto Otimização.</div>
+                            <a href="#" class="view-all">Ver todas as Notificações</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="theme-toggle-link" role="button" aria-label="Alternar Modo Claro ou Escuro">
+                    <button id="theme-toggle" type="button">
+                        <i class="fas fa-moon"></i> 
+                    </button> 
+                    <span id="theme-text">Claro/Escuro</span>
+                </a>
+                
+                <a href="#" class="profile-menu"><img src="download.png" alt="Seu Avatar"></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="left-sidebar" aria-label="Informações do Perfil e Atalhos">
+            <div class="card profile-card">
+                <div class="cover"></div>
+                <div class="avatar"><img src="download.png" alt="Foto de Perfil"></div>
+                <h4 style="text-align: center;">Gabriel Henrique</h4>
+                <p style="text-align: center;">Aluno de Informática | IFPI</p>
+                <div class="profile-stats">
+                    <a href="#">Visualizações de Perfil <span>28</span></a>
+                    <a href="#">Impressões de Postagens <span>305</span></a>
+                </div>
+                <div class="left-menu">
+                    <a href="#"><i class="fas fa-bookmark" style="margin-right: 8px;"></i>Itens Salvos</a>
+                    <a href="#"><i class="fas fa-users" style="margin-right: 8px;"></i>Meus Grupos</a>
+                </div>
+            </div>
+        </aside>
+
+        <section aria-label="Feed de Notícias e Projetos">
+            <div class="card create-post">
+                <div class="post-input-area">
+                    <img src="download.png" alt="Seu Avatar">
+                    <button>Criar publicação sobre projeto</button>
+                </div>
+                <div class="create-options">
+                    <button class="green"><i class="fas fa-image"></i> Mídia</button>
+                    <button class="red"><i class="fas fa-calendar-alt"></i> Evento</button>
+                    <button><i class="fas fa-file-alt"></i> Documento</button>
+                    <button><i class="fas fa-user-friends"></i> Participantes</button>
+                </div>
+            </div>
+
+            <div class="feed-divider">
+                <hr>
+                <span>Feed de Notícias</span>
+                <hr>
+                <div class="feed-filter">
+                    <button class="active">Todos</button>
+                    <button>Novos</button>
+                </div>
+            </div>
+
+            <div class="card feed-item">
+                <div class="feed-author">
+                    <img src="download.jpeg" alt="Foto da Prof. Lúcia Santos">
+                    <div class="author-details">
+                        <h5>Prof. Lúcia Santos <i class="fas fa-check-circle" style="color:var(--color-primary); font-size: 0.8rem;" title="Conta Verificada"></i></h5>
+                        <small>IFPI - Eng. Elétrica · 3h · <i class="fas fa-globe-americas"></i></small>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p><strong>OPORTUNIDADE DE BOLSA PIBIC</strong></p>
+                    <p>Iniciei a busca por um aluno para o projeto de <b>Otimização de Painéis Solares</b>. É uma excelente oportunidade para quem tem interesse em Energias Renováveis e programação básica (Python/Arduino).</p>
+                    <p><a href="#" style="color:var(--text-link); font-weight: 500;">#PesquisaIF #EnergiaRenovavel #PIBIC</a></p>
+                </div>
+                <div class="feed-image">
+                    <img id="sl" src="pj.jpg" alt="Imagem ilustrativa do Projeto Solar">
+                </div>
+                <div class="feed-interactions">
+                    <span><i class="fas fa-thumbs-up"></i> 18 Reações · 3 Comentários</span>
+                    <span>3 Compartilhamentos</span>
+                </div>
+                <div class="feed-actions">
+                    <button><i class="fas fa-thumbs-up"></i> Reagir</button>
+                    <button><i class="fas fa-comment"></i> Comentar</button>
+                    <button><i class="fas fa-share"></i> Compartilhar</button>
+                    <button><i class="fas fa-sign-in-alt"></i> Candidatar</button>
+                </div>
+            </div>
+            
+            <div class="card feed-item">
+                <div class="feed-author">
+                    <img src="download.jpeg" alt="Comunidade IFPI">
+                    <div class="author-details">
+                        <h5>Comunidade IFPI <i class="fas fa-bullhorn" style="color:var(--color-secondary); font-size: 0.8rem;"></i></h5>
+                        <small>Página Oficial · 1d · <i class="fas fa-users"></i></small>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p>📢 [ANÚNCIO] As inscrições para o SEMIC 2024 foram abertas! Não perca a chance de submeter seu trabalho de pesquisa e extensão.</p>
+                    <p>Prazo final: 30 de Novembro. Mais informações no site oficial.</p>
+                    <p><a href="#" style="color:var(--text-link); font-weight: 500;">#SEMIC2024 #Pesquisa #Extensão</a></p>
+                </div>
+                <div class="feed-image">
+                    <img id="sl" src="images.jpeg" alt="Imagem de divulgação do SEMIC">
+                </div>
+                <div class="feed-interactions">
+                    <span><i class="fas fa-heart"></i> 55 Reações · 10 Comentários</span>
+                    <span>15 Compartilhamentos</span>
+                </div>
+                <div class="feed-actions">
+                    <button><i class="fas fa-thumbs-up"></i> Reagir</button>
+                    <button><i class="fas fa-comment"></i> Comentar</button>
+                    <button><i class="fas fa-share"></i> Compartilhar</button>
+                    <button><i class="fas fa-external-link-alt"></i> Ver Evento</button>
+                </div>
+            </div>
+
+            <div class="card feed-item">
+                <div class="feed-author">
+                    <img src="download.png" alt="Foto do Usuário">
+                    <div class="author-details">
+                        <h5>Ana Carolina</h5>
+                        <small>Aluna de Química · 5h · <i class="fas fa-globe-americas"></i></small>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p>🎉 Finalizamos o projeto de <strong>Reciclagem de Plásticos com Baixo Custo</strong>! Foram 6 meses de muito trabalho e aprendizado. Os resultados superaram as expectativas e vamos apresentar o protótipo na próxima Feira de Inovação.</p>
+                    <p>Um agradecimento especial aos meus colegas de equipe e ao Prof. Marcos pelo apoio!</p>
+                    <p><a href="#" style="color:var(--text-link); font-weight: 500;">#Sustentabilidade #Inovação #ProjetoConcluído</a></p>
+                </div>
+                <div class="feed-interactions">
+                    <span><i class="fas fa-hand-rock"></i> 32 Reações · 5 Comentários</span>
+                    <span>1 Compartilhamento</span>
+                </div>
+                <div class="feed-actions">
+                    <button><i class="fas fa-thumbs-up"></i> Reagir</button>
+                    <button><i class="fas fa-comment"></i> Comentar</button>
+                    <button><i class="fas fa-share"></i> Compartilhar</button>
+                    <button><i class="fas fa-eye"></i> Ver Projeto</button>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="right-sidebar" aria-label="Notícias e Sugestões da Rede">
+            <div class="card news-card">
+                <h4>Notícias e Eventos</h4>
+                <ul>
+                    <li>
+                        <h5>Submissão de Projetos de Pesquisa e Extensão 2025</h5>
+                        <p>4h atrás • 530 leitores</p>
+                    </li>
+                    <li>
+                        <h5>Workshop de Métodos Ágeis para Equipes de Projetos</h5>
+                        <p>1 dia atrás • 1.200 leitores</p>
+                    </li>
+                    <li>
+                        <h5>Nova Parceria de Inovação com Startup Local</h5>
+                        <p>2 dias atrás • 850 leitores</p>
+                    </li>
+                    <li>
+                        <h5>IFPI Conquista Primeiro Lugar em Competição Nacional de Robótica</h5>
+                        <p>3 dias atrás • 2.100 leitores</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card suggestions">
+                <h4>Adicionar ao seu feed</h4>
+                <div class="item">
+                    <img src="image.png" alt="Lab. de Robótica">
+                    <div class="info">
+                        <h6>Lab. de Robótica Avançada</h6>
+                        <p>Grupo de Pesquisa</p>
+                    </div>
+                    <button>+ Seguir</button>
+                </div>
+                <div class="item">
+                    <img src="image copy.png" alt="Prof. Geugres carvalho">
+                    <div class="info">
+                        <h6>Prof. Geugres carvalho</h6>
+                        <p>Redes · Ciência da Computação</p>
+                    </div>
+                    <button>+ Conectar</button>
+                </div>
+                <div class="item">
+                    <img src="download (2).jpeg" alt="Prof. Paula Lima">
+                    <div class="info">
+                        <h6>Prof. Paula Lima</h6>
+                        <p>Curadora de Conteúdo</p>
+                    </div>
+                    <button>+ Conectar</button>
+                </div>
+            </div>
+            
+        </aside>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="#">Sobre</a> 
+                <a href="#">Acessibilidade</a> 
+                <a href="#">Ajuda</a>
+                <a href="#">Termos</a> 
+                <a href="#">Privacidade</a>
+            </nav>
+            <p class="copyright">Linkedif &copy; 2024</p>
+            <div class="credits">
+                <span class="collaboratorr">Desenvolvido por :</span>
+                <span class="collaborator">Gabriel Henrique</span>, 
+                <span class="collaborator">Ítalo da Silva</span>, 
+                <span class="collaborator">Thiago Quixaba</span>, 
+                <span class="collaborator">Lígia Menezzs</span>, 
+                <span class="collaborator">Paulo César</span>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="post-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Criar Nova Publicação</h2>
+                <button class="close-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="author-details-modal">
+                    <img src="download.png" alt="Seu Avatar">
+                    <div>
+                        <h4>Gabriel Henrique</h4>
+                        <select>
+                            <option>Público (Visível a todos)</option>
+                            <option>Apenas para a Rede</option>
+                            <option>Apenas eu (Rascunho)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="selected-date-display" class="event-display" style="display: none;">
+                    <i class="fas fa-calendar-alt"></i> 
+                    <span>Agendado para: </span>
+                    <strong id="display-date-value"></strong>
+                    <button id="clear-date-btn" title="Remover data">&times;</button>
+                </div>
+                
+                <textarea id="post-text-area" placeholder="Sobre o que você gostaria de publicar? (Projeto, Oportunidade, Dúvida)"></textarea>
+                
+                <div id="media-preview-container" class="media-preview-container" style="display: none;">
+                    </div>
+                
+            </div>
+            <div class="modal-footer">
+                <div class="media-options">
+                    <button class="green" id="media-button" title="Anexar Imagem ou Vídeo"><i class="fas fa-image"></i> Mídia</button>
+                    <button class="red" id="event-button" title="Agendar Publicação"><i class="fas fa-calendar-alt"></i> Agendar</button>
+                    
+                    <input type="file" id="media-input" accept="image/*,video/*" multiple hidden>
+                    <input type="datetime-local" id="date-input" hidden>
+                </div>
+                <button class="post-submit-btn" disabled>Publicar</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
