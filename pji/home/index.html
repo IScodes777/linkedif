@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <link rel="stylesheet" href="stayle.css">
+    <link rel="stylesheet" href="/pji/home/Styles/stayle.css">
 </head>
 <body data-theme="light">
     <header class="top-header">
@@ -21,6 +21,8 @@
                 <i class="fas fa-search"></i>
                 <input type="text" placeholder="Pesquisar projetos, pessoas..." aria-label="Pesquisar no Linkedif" />
             </div>
+
+            <!--Menu de opções da Página Principal-->
             <nav role="navigation" aria-label="Navegação Principal">
                 <a href="#" class="active nav-item" aria-current="page"><i class="fas fa-home"></i>Início</a>
                 
@@ -36,6 +38,7 @@
                     </div>
                 </a>
                 
+                <!--Aba de Projetos-->
                 <a href="#" class="projetos-link nav-item" id="projetos-toggle">
                     <i class="fas fa-lightbulb"></i>Projetos
                     <div class="popup projetos-popup" aria-hidden="true">
@@ -47,7 +50,8 @@
                         </div>
                     </div>
                 </a>
-                
+
+                <!--Aba de Converças-->
                 <a href="#" class="messages-link nav-item" id="messages-toggle">
                     <i class="fas fa-envelope"></i>Mensagens
                     <div class="popup messages-popup" aria-hidden="true">
@@ -59,6 +63,7 @@
                     </div>
                 </a>
                 
+                <!--Aba de Notificações-->
                 <a href="#" class="notifications-link nav-item" id="notifications-toggle">
                     <i class="fas fa-bell"></i>Notificações
                     <div class="popup notifications-popup" aria-hidden="true">
@@ -78,12 +83,12 @@
                 
                 <div class="profile-menu-container">
                     <a href="#" class="profile-menu-link" id="profile-menu-toggle">
-                        <img id="header-avatar" src="download.png" alt="Seu Avatar">
+                        <img id="header-avatar" src="/pji/Fotos_Perf/download.png" alt="Seu Avatar">
                     </a>
                     
                     <div class="popup profile-popup" aria-hidden="true">
                         <div class="popup-header profile-info">
-                            <img id="popup-avatar" src="download.png" alt="Seu Avatar">
+                            <img id="popup-avatar" src="/pji/Fotos_Perf/download.png" alt="Seu Avatar">
                             <div>
                                 <h4 id="popup-name">Gabriel Henrique</h4>
                                 <small id="popup-role">Aluno de Informática | IFPI</small>
@@ -102,11 +107,12 @@
         </div>
     </header>
 
+    <!--Perfil de Usuário - Canto Esquerdo-->
     <main class="container">
         <aside class="left-sidebar" aria-label="Informações do Perfil e Atalhos">
             <div class="card profile-shortcut-card">
                 <div class="cover"></div>
-                <div class="avatar"><img id="sidebar-avatar" src="download.png" alt="Foto de Perfil"></div>
+                <div class="avatar"><img id="sidebar-avatar" src="/pji/Fotos_Perf/download.png" alt="Foto de Perfil"></div>
                 <h4 id="profile-name" style="text-align: center;">Gabriel Henrique</h4>
                 <p id="profile-role" style="text-align: center;">Aluno de Informática | IFPI</p>
                 <div class="profile-stats">
@@ -129,10 +135,11 @@
             </div>
         </aside>
 
+        <!--Postagem de Usuário - aba visual e interativa-->
         <section aria-label="Feed de Notícias e Projetos">
             <div class="card create-post">
                 <div class="post-input-area">
-                    <img id="post-avatar" src="download.png" alt="Seu Avatar">
+                    <img id="post-avatar" src="/pji/Fotos_Perf/download.png" alt="Seu Avatar">
                     <button id="open-post-modal-shortcut">Criar publicação sobre projeto</button>
                 </div>
                 <div class="create-options">
@@ -153,9 +160,10 @@
                 </div>
             </div>
 
+            <!--Parte das Publicações e seus Usuários-->
             <div class="card feed-item">
                 <div class="feed-author">
-                    <img src="download.jpeg" alt="Foto da Prof. Lúcia Santos">
+                    <img src="/pji/Fotos_Perf/download.jpeg" alt="Foto da Prof. Lúcia Santos">
                     <div class="author-details">
                         <h5>Prof. Lúcia Santos <i class="fas fa-check-circle" style="color:var(--color-primary); font-size: 0.8rem;" title="Conta Verificada"></i></h5>
                         <small>IFPI - Eng. Elétrica · 3h · <i class="fas fa-globe-americas"></i></small>
@@ -167,7 +175,7 @@
                     <p><a href="#" style="color:var(--text-link); font-weight: 500;">#PesquisaIF #EnergiaRenovavel #PIBIC</a></p>
                 </div>
                 <div class="feed-image">
-                    <img id="sl" src="pj.jpg" alt="Imagem ilustrativa do Projeto Solar">
+                    <img id="sl" src="/pji/Fotos_Posts/pj.jpg" alt="Imagem ilustrativa do Projeto Solar">
                 </div>
                 <div class="feed-interactions">
                     <span><i class="fas fa-thumbs-up"></i> 18 Reações · 3 Comentários</span>
@@ -183,7 +191,7 @@
             
             <div class="card feed-item">
                 <div class="feed-author">
-                    <img src="download.jpeg" alt="Comunidade IFPI">
+                    <img src="/pji/Fotos_Perf/download.jpeg" alt="Comunidade IFPI">
                     <div class="author-details">
                         <h5>Comunidade IFPI <i class="fas fa-bullhorn" style="color:var(--color-secondary); font-size: 0.8rem;"></i></h5>
                         <small>Página Oficial · 1d · <i class="fas fa-users"></i></small>
@@ -195,7 +203,7 @@
                     <p><a href="#" style="color:var(--text-link); font-weight: 500;">#SEMIC2024 #Pesquisa #Extensão</a></p>
                 </div>
                 <div class="feed-image">
-                    <img id="sl" src="images.jpeg" alt="Imagem de divulgação do SEMIC">
+                    <img id="sl" src="/pji/Fotos_Perf/images.jpeg" alt="Imagem de divulgação do SEMIC">
                 </div>
                 <div class="feed-interactions">
                     <span><i class="fas fa-heart"></i> 55 Reações · 10 Comentários</span>
@@ -211,7 +219,7 @@
 
             <div class="card feed-item">
                 <div class="feed-author">
-                    <img src="download.png" alt="Foto do Usuário">
+                    <img src="/pji/Fotos_Perf/download.jpeg" alt="Foto do Usuário">
                     <div class="author-details">
                         <h5>Ana Carolina</h5>
                         <small>Aluna de Química · 5h · <i class="fas fa-globe-americas"></i></small>
@@ -236,6 +244,7 @@
 
         </section>
 
+        <!--Sugestões de Projetos e Usuários-->
         <aside class="right-sidebar" aria-label="Notícias e Sugestões da Rede">
             <div class="card news-card">
                 <h4>Notícias e Eventos</h4>
@@ -262,7 +271,7 @@
             <div class="card suggestions">
                 <h4>Adicionar ao seu feed</h4>
                 <div class="item">
-                    <img src="image.png" alt="Lab. de Robótica">
+                    <img src="/pji/Fotos_Perf/image.png" alt="Lab. de Robótica">
                     <div class="info">
                         <h6>Lab. de Robótica Avançada</h6>
                         <p>Grupo de Pesquisa</p>
@@ -270,7 +279,7 @@
                     <button>+Seguir</button>
                 </div>
                 <div class="item">
-                    <img src="image copy.png" alt="Prof. Geugres carvalho">
+                    <img src="/pji/Fotos_Perf/image_copy.png" alt="Prof. Geugres carvalho">
                     <div class="info">
                         <h6>Prof. Geugres carvalho</h6>
                         <p>Redes · Ciência da Computação</p>
@@ -278,7 +287,7 @@
                     <button>+Conectar</button>
                 </div>
                 <div class="item">
-                    <img src="download (2).jpeg" alt="Prof. Paula Lima">
+                    <img src="/pji/Fotos_Posts/download_(2).jpeg" alt="Prof. Paula Lima">
                     <div class="info">
                         <h6>Prof. Paula Lima</h6>
                         <p>Curadora de Conteúdo</p>
@@ -305,12 +314,14 @@
                 <span class="collaborator">Gabriel Henrique</span>, 
                 <span class="collaborator">Ítalo da Silva</span>, 
                 <span class="collaborator">Thiago Quixaba</span>, 
-                <span class="collaborator">Lígia Menezzs</span>, 
+                <span class="collaborator">Lígia Menezes</span>, 
+                <span class="collaborator">Talita</span>&
                 <span class="collaborator">Paulo César</span>
             </div>
         </div>
     </footer>
     
+    <!--Criação do Postagem do Usuário-->
     <div id="post-modal" class="modal" aria-hidden="true">
         <div class="modal-content">
             <div class="modal-header">
@@ -319,7 +330,7 @@
             </div>
             <div class="modal-body">
                 <div class="post-input-header">
-                    <img id="modal-post-avatar" src="download.png" alt="Seu Avatar">
+                    <img id="modal-post-avatar" src="/pji/Fotos_Perf/download.png" alt="Seu Avatar">
                     <div>
                         <h4 id="modal-post-name">Gabriel Henrique</h4>
                         <small>Publicar como: Público</small>
@@ -355,7 +366,7 @@
                         <label>Foto de Perfil</label>
                         <div class="photo-controls">
                             <div class="current-photo-container">
-                                <img id="edit-avatar-preview" src="download.png" alt="Foto Atual">
+                                <img id="edit-avatar-preview" src="/pji/Fotos_Perf/download.png" alt="Foto Atual">
                                 <span id="photo-status">Atual</span>
                             </div>
                             <div class="photo-actions">
@@ -366,6 +377,7 @@
                         </div>
                     </div>
                     
+                    <!--Dados do Usuário-->
                     <div class="form-group">
                         <label for="edit-name">Nome Completo</label>
                         <input type="text" id="edit-name" value="Gabriel Henrique" required>
@@ -406,7 +418,7 @@
                 <div class="card full-profile-header-card">
                     <div class="cover" style="height: 120px; background: var(--color-primary);"></div>
                     <div class="profile-main-info">
-                        <img id="full-profile-avatar" src="download.png" alt="Foto de Perfil">
+                        <img id="full-profile-avatar" src="/pji/Fotos_Perf/download.png" alt="Foto de Perfil">
                         <div class="profile-text-content">
                             <h3 id="full-profile-name-text">Gabriel Henrique</h3>
                             <p id="full-profile-role-text">Aluno de Informática | IFPI</p>
@@ -424,6 +436,7 @@
                     <p id="full-profile-about-text">Estudante de Informática com foco em desenvolvimento de sistemas e pesquisa em Inteligência Artificial.</p>
                 </div>
 
+                <!--Dados de Contato do Usuáro logado-->
                 <div class="card full-profile-section">
                     <h4><i class="fas fa-chart-bar"></i> Estatísticas e Links</h4>
                     <div class="stats-and-links">
@@ -522,6 +535,6 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="/pji/home/Scripts/script.js"></script>
 </body>
 </html>

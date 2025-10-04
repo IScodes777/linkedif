@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <link rel="stylesheet" href="stayle.css"> 
+    <link rel="stylesheet" href="/pji/home/Styles/stayle.css"> 
     
     <style>
         /* Estilos de Cores e Fundo */
@@ -274,7 +274,7 @@
     
     <div class="auth-container">
         <div class="auth-header">
-            <a href="index.html" class="logo">
+            <a href="/pji/home/index.html" class="logo">
                 <i class="fas fa-network-wired"></i> Link<span>dif</span>
             </a>
             <h2 id="auth-title">Faça Login</h2>
@@ -369,7 +369,7 @@
             // --- 0. VERIFICAR STATUS DE LOGIN ---
             // Se o usuário já estiver logado (sessão ativa), redireciona para a página principal
             if (sessionStorage.getItem('user_logged_in') === 'true') {
-                window.location.href = 'index.html'; 
+                window.location.href = '/pji/home/index.html'; 
                 return; // Para a execução do script
             }
 
@@ -460,7 +460,7 @@
                     // Armazena o login na sessão
                     sessionStorage.setItem('user_logged_in', 'true');
                     alert("Autenticação com Google bem-sucedida! Redirecionando...");
-                    window.location.href = 'index.html'; 
+                    window.location.href = '/pji/home/index.html'; 
                 }, 1500); 
             });
             
@@ -494,7 +494,7 @@
                 // Login bem-sucedido
                 sessionStorage.setItem('user_logged_in', 'true');
                 alert("Login simulado bem-sucedido! Redirecionando para o Feed.");
-                window.location.href = 'index.html'; 
+                window.location.href = '/pji/home/index.html'; 
             });
 
 
@@ -550,7 +550,7 @@
                 
                 // Login automático após o cadastro
                 sessionStorage.setItem('user_logged_in', 'true');
-                window.location.href = 'index.html'; 
+                window.location.href = '/pji/home/index.html'; 
             });
         });
     </script>
