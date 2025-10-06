@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linkedif | Rede Institucional de Projetos - Tema Dinâmico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="/LinkDif/Home/Styles/stayle.css">
+</head>
+<body data-theme="light">
+    <header class="top-header">
+        <div class="container">
+            <div class="left">
+                <a href="#" class="logo">
+                    <i class="fas fa-network-wired"></i> Link<span>dif</span>
+                </a>
+            </div>
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquisar projetos, pessoas..." aria-label="Pesquisar no Linkedif" />
+            </div>
+            <nav role="navigation" aria-label="Navegação Principal">
+                <a href="#" class="active nav-item" aria-current="page"><i class="fas fa-home"></i>Início</a>
+                
+                <a href="#" class="rede-link nav-item" id="rede-toggle">
+                    <i class="fas fa-network-wired"></i>Rede
+                    <div class="popup rede-popup" aria-hidden="true">
+                        <div class="popup-header">Sua Rede</div>
+                        <div class="popup-body">
+                            <div class="notification-item">Pessoas para Conectar: Encontre colegas por curso/campus.</div>
+                            <div class="notification-item">Grupos de Pesquisa: Acesse e participe de comunidades temáticas.</div>
+                            <a href="#" class="view-all">Ver Mais Sugestões</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="projetos-link nav-item" id="projetos-toggle">
+                    <i class="fas fa-lightbulb"></i>Projetos
+                    <div class="popup projetos-popup" aria-hidden="true">
+                        <div class="popup-header">Buscar Projetos</div>
+                        <div class="popup-body">
+                            <div class="notification-item">Oportunidades: Bolsas PIBIC, TCCs e Vagas de Recrutamento.</div>
+                            <div class="notification-item">Filtros: Pesquise por área (Tecnologia, Sustentabilidade, etc.).</div>
+                            <a href="#" class="view-all">Acessar Banco de Projetos</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="messages-link nav-item" id="messages-toggle">
+                    <i class="fas fa-envelope"></i>Mensagens
+                    <div class="popup messages-popup" aria-hidden="true">
+                        <div class="popup-header">Mensagens</div>
+                        <div class="popup-body">
+                            <p class="empty-state">Sem novas conversas.</p>
+                            <a href="#" class="view-all">Ver todas as Mensagens</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="#" class="notifications-link nav-item" id="notifications-toggle">
+                    <i class="fas fa-bell"></i>Notificações
+                    <div class="popup notifications-popup" aria-hidden="true">
+                        <div class="popup-header">Notificações Recentes</div>
+                        <div class="popup-body">
+                            <div class="notification-item">Prof. Lúcia reagiu à sua postagem.</div>
+                            <div class="notification-item">Novo comentário no projeto Otimização.</div>
+                            <a href="#" class="view-all">Ver todas as Notificações</a>
+                        </div>
+                    </div>
+                </a>
+                
+                <button class="nav-item theme-toggle-btn" id="theme-toggle" type="button" aria-label="Alternar Modo Claro ou Escuro">
+                    <i class="fas fa-moon"></i> 
+                    Tema
+                </button>
+                
+                <div class="profile-menu-container">
+                    <a href="#" class="profile-menu-link" id="profile-menu-toggle">
+                        <img id="header-avatar" src="/LinkDif/Imagens_Perf/download.png" alt="Seu Avatar">
+                    </a>
+                    
+                    <div class="popup profile-popup" aria-hidden="true">
+                        <div class="popup-header profile-info">
+                            <img id="popup-avatar" src="/LinkDif/Imagens_Perf/download.png" alt="Seu Avatar">
+                            <div>
+                                <h4 id="popup-name">Gabriel Henrique</h4>
+                                <small id="popup-role">Aluno de Informática | IFPI</small>
+                            </div>
+                        </div>
+                        <div class="popup-body">
+                            <a href="#" class="view-all" id="view-profile-btn">Ver Perfil Completo</a> 
+                            <hr class="menu-separator">
+                            <a href="#" class="notification-item" id="open-settings-modal-btn"><i class="fas fa-cog"></i> Configurações e Privacidade</a> 
+                            <a href="#" class="notification-item red-text"><i class="fas fa-sign-out-alt"></i> Sair</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <aside class="left-sidebar" aria-label="Informações do Perfil e Atalhos">
+            <div class="card profile-shortcut-card">
+                <div class="cover"></div>
+                <div class="avatar"><img id="sidebar-avatar" src="/LinkDif/Imagens_Perf/download.png" alt="Foto de Perfil"></div>
+                <h4 id="profile-name" style="text-align: center;">Gabriel Henrique</h4>
+                <p id="profile-role" style="text-align: center;">Aluno de Informática | IFPI</p>
+                <div class="profile-stats">
+                    <a href="#">Visualizações de Perfil <span>28</span></a>
+                    <a href="#">Impressões de Postagens <span>305</span></a>
+                </div>
+                
+                <button id="edit-profile-btn" class="edit-profile-btn" style="border-top: 1px solid var(--border-light);"><i class="fas fa-user-edit"></i> Editar Perfil</button>
+            </div>
+
+            <div class="card access-card-sidebar">
+                <h4>Acessos Rápidos</h4>
+                <ul>
+                    <li><a id="access-email" href="mailto:capau.2023120iipi0021@aluno.ifpi.edu.br?subject=Olá&body=Gostaria%20de%20entrar%20em%20contato"><i class="fas fa-envelope"></i> Meu E-mail Institucional</a></li>
+                    
+                    <li><a id="access-social" href="https://instagram.com/ghenrique.x"><i class="fas fa-share-alt"></i> Minha Rede Social</a></li>
+                    
+                    <li><a id="access-whatsapp" href="https://wa.me/5589994451530"><i class="fab fa-whatsapp"></i> Contato WhatsApp</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section aria-label="Feed de Notícias e Projetos">
+            <div class="card create-post">
+                <div class="post-input-area">
+                    <img id="post-avatar" src="/LinkDif/Imagens_Perf/download.png" alt="Seu Avatar">
+                    <button id="open-post-modal-shortcut">Criar publicação sobre projeto</button>
+                </div>
+                <div class="create-options">
+                    <button class="green" id="post-media-shortcut"><i class="fas fa-image"></i> Mídia</button>
+                    <button class="red"><i class="fas fa-calendar-alt"></i> Evento</button>
+                    <button><i class="fas fa-file-alt"></i> Documento</button>
+                    <button><i class="fas fa-user-friends"></i> Participantes</button>
+                </div>
+            </div>
+
+            <div class="feed-divider">
+                <hr>
+                <span>Feed de Notícias</span>
+                <hr>
+                <div class="feed-filter">
+                    <button class="active">Todos</button>
+                    <button>Novos</button>
+                </div>
+            </div>
+
+            <div class="card feed-item">
+                <div class="feed-author">
+                    <img src="/LinkDif/Imagens_Perf/download.jpeg" alt="Foto da Prof. Lúcia Santos">
+                    <div class="author-details">
+                        <h5>Prof. Lúcia Santos <i class="fas fa-check-circle" style="color:var(--color-primary); font-size: 0.8rem;" title="Conta Verificada"></i></h5>
+                        <small>IFPI - Eng. Elétrica · 3h · <i class="fas fa-globe-americas"></i></small>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p><strong>OPORTUNIDADE DE BOLSA PIBIC</strong></p>
+                    <p>Iniciei a busca por um aluno para o projeto de <b>Otimização de Painéis Solares</b>. É uma excelente oportunidade para quem tem interesse em Energias Renováveis e programação básica (Python/Arduino).</p>
+                    <p><a href="#" style="color:var(--text-link); font-weight: 500;">#PesquisaIF #EnergiaRenovavel #PIBIC</a></p>
+                </div>
+                <div class="feed-image">
+                    <img id="sl" src="/LinkDif/Imagens_Posts/pj.jpg" alt="Imagem ilustrativa do Projeto Solar">
+                </div>
+                <div class="feed-interactions">
+                    <span><i class="fas fa-thumbs-up"></i> 18 Reações · 3 Comentários</span>
+                    <span>3 Compartilhamentos</span>
+                </div>
+                <div class="feed-actions">
+                    <button><i class="fas fa-thumbs-up"></i> Reagir</button>
+                    <button><i class="fas fa-comment"></i> Comentar</button>
+                    <button><i class="fas fa-share"></i> Compartilhar</button>
+                    <button><i class="fas fa-sign-in-alt"></i> Candidatar</button>
+                </div>
+            </div>
+            
+            <div class="card feed-item">
+                <div class="feed-author">
+                    <img src="/LinkDif/Imagens_Perf/download.jpeg" alt="Comunidade IFPI">
+                    <div class="author-details">
+                        <h5>Comunidade IFPI <i class="fas fa-bullhorn" style="color:var(--color-secondary); font-size: 0.8rem;"></i></h5>
+                        <small>Página Oficial · 1d · <i class="fas fa-users"></i></small>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p>📢 [ANÚNCIO] As inscrições para o SEMIC 2024 foram abertas! Não perca a chance de submeter seu trabalho de pesquisa e extensão.</p>
+                    <p>Prazo final: 30 de Novembro. Mais informações no site oficial.</p>
+                    <p><a href="#" style="color:var(--text-link); font-weight: 500;">#SEMIC2024 #Pesquisa #Extensão</a></p>
+                </div>
+                <div class="feed-image">
+                    <img id="sl" src="/LinkDif/Imagens_Posts/images.jpeg" alt="Imagem de divulgação do SEMIC">
+                </div>
+                <div class="feed-interactions">
+                    <span><i class="fas fa-heart"></i> 55 Reações · 10 Comentários</span>
+                    <span>15 Compartilhamentos</span>
+                </div>
+                <div class="feed-actions">
+                    <button><i class="fas fa-thumbs-up"></i> Reagir</button>
+                    <button><i class="fas fa-comment"></i> Comentar</button>
+                    <button><i class="fas fa-share"></i> Compartilhar</button>
+                    <button><i class="fas fa-external-link-alt"></i> Ver Evento</button>
+                </div>
+            </div>
+
+            <div class="card feed-item">
+                <div class="feed-author">
+                    <img src="/LinkDif/Imagens_Perf/download.png" alt="Foto do Usuário">
+                    <div class="author-details">
+                        <h5>Ana Carolina</h5>
+                        <small>Aluna de Química · 5h · <i class="fas fa-globe-americas"></i></small>
+                    </div>
+                </div>
+                <div class="feed-content">
+                    <p>🎉 Finalizamos o projeto de <strong>Reciclagem de Plásticos com Baixo Custo</strong>! Foram 6 meses de muito trabalho e aprendizado. Os resultados superaram as expectativas e vamos apresentar o protótipo na próxima Feira de Inovação.</p>
+                    <p>Um agradecimento especial aos meus colegas de equipe e ao Prof. Marcos pelo apoio!</p>
+                    <p><a href="#" style="color:var(--text-link); font-weight: 500;">#Sustentabilidade #Inovação #ProjetoConcluído</a></p>
+                </div>
+                <div class="feed-interactions">
+                    <span><i class="fas fa-hand-rock"></i> 32 Reações · 5 Comentários</span>
+                    <span>1 Compartilhamento</span>
+                </div>
+                <div class="feed-actions">
+                    <button><i class="fas fa-thumbs-up"></i> Reagir</button>
+                    <button><i class="fas fa-comment"></i> Comentar</button>
+                    <button><i class="fas fa-share"></i> Compartilhar</button>
+                    <button><i class="fas fa-eye"></i> Ver Projeto</button>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="right-sidebar" aria-label="Notícias e Sugestões da Rede">
+            <div class="card news-card">
+                <h4>Notícias e Eventos</h4>
+                <ul>
+                    <li>
+                        <h5>Submissão de Projetos de Pesquisa e Extensão 2025</h5>
+                        <p>4h atrás • 530 leitores</p>
+                    </li>
+                    <li>
+                        <h5>Workshop de Métodos Ágeis para Equipes de Projetos</h5>
+                        <p>1 dia atrás • 1.200 leitores</p>
+                    </li>
+                    <li>
+                        <h5>Nova Parceria de Inovação com Startup Local</h5>
+                        <p>2 dias atrás • 850 leitores</p>
+                    </li>
+                    <li>
+                        <h5>IFPI Conquista Primeiro Lugar em Competição Nacional de Robótica</h5>
+                        <p>3 dias atrás • 2.100 leitores</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card suggestions">
+                <h4>Adicionar ao seu feed</h4>
+                <div class="item">
+                    <img src="/LinkDif/Imagens_Perf/image.png" alt="Lab. de Robótica">
+                    <div class="info">
+                        <h6>Lab. de Robótica Avançada</h6>
+                        <p>Grupo de Pesquisa</p>
+                    </div>
+                    <button>+Seguir</button>
+                </div>
+                <div class="item">
+                    <img src="/LinkDif/Imagens_Perf/image copy.png" alt="Prof. Geugres carvalho">
+                    <div class="info">
+                        <h6>Prof. Geugres carvalho</h6>
+                        <p>Redes · Ciência da Computação</p>
+                    </div>
+                    <button>+Conectar</button>
+                </div>
+                <div class="item">
+                    <img src="/LinkDif/Imagens_Perf/download (2).jpeg" alt="Prof. Paula Lima">
+                    <div class="info">
+                        <h6>Prof. Paula Lima</h6>
+                        <p>Curadora de Conteúdo</p>
+                    </div>
+                    <button>+Conectar</button>
+                </div>
+            </div>
+            
+        </aside>
+    </main>
+    
+    <footer class="site-footer">
+        <div class="footer-container">
+            <nav class="footer-nav">
+                <a href="#">Sobre</a> 
+                <a href="#">Acessibilidade</a> 
+                <a href="#">Ajuda</a>
+                <a href="#">Termos</a> 
+                <a href="#">Privacidade</a>
+            </nav>
+            <p class="copyright">Linkedif &copy; 2025</p>
+            <div class="credits">
+                <span class="collaboratorr">Desenvolvido por :</span>
+                <span class="collaborator">Gabriel Henrique</span>, 
+                <span class="collaborator">Ítalo da Silva</span>, 
+                <span class="collaborator">Thiago Quixaba</span>, 
+                <span class="collaborator">Lígia Menezzs</span>, 
+                <span class="collaborator">Paulo César</span>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="post-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Criar publicação</h2>
+                <button class="close-btn" id="close-post-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="post-input-header">
+                    <img id="modal-post-avatar" src="/LinkDif/Imagens_Perf/download.png" alt="Seu Avatar">
+                    <div>
+                        <h4 id="modal-post-name">Gabriel Henrique</h4>
+                        <small>Publicar como: Público</small>
+                    </div>
+                </div>
+                <textarea id="post-text-area" rows="4" placeholder="Sobre o que você gostaria de publicar? (Mínimo 1 caractere)"></textarea>
+                
+                <div id="image-preview-container" class="image-preview-container" style="display: none;">
+                    <img id="post-image-preview" src="#" alt="Pré-visualização da imagem">
+                    <button id="remove-image-btn" class="remove-image-btn">&times;</button>
+                </div>
+                <input type="file" id="image-upload-input" accept="image/*" hidden>
+            </div>
+            <div class="modal-footer">
+                <div class="media-options">
+                    <button id="trigger-image-upload"><i class="fas fa-image"></i> Mídia</button>
+                    <button><i class="fas fa-file-alt"></i> Documento</button>
+                </div>
+                <button class="post-submit-btn" id="submit-post-btn" disabled>Publicar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-profile-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Editar Perfil</h2>
+                <button class="close-btn" id="close-edit-profile-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="profile-edit-form">
+                    <div class="form-group profile-photo-group">
+                        <label>Foto de Perfil</label>
+                        <div class="photo-controls">
+                            <div class="current-photo-container">
+                                <img id="edit-avatar-preview" src="/LinkDif/Imagens_Perf/download.png" alt="Foto Atual">
+                                <span id="photo-status">Atual</span>
+                            </div>
+                            <div class="photo-actions">
+                                <button type="button" class="btn-secondary" id="change-photo-btn"><i class="fas fa-camera"></i> Trocar Foto</button>
+                                <button type="button" class="btn-secondary btn-danger" id="remove-photo-btn"><i class="fas fa-trash-alt"></i> Remover</button>
+                                <input type="file" id="photo-input" accept="image/*" hidden>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-name">Nome Completo</label>
+                        <input type="text" id="edit-name" value="Gabriel Henrique" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-role">Título/Cargo</label>
+                        <input type="text" id="edit-role" value="Aluno de Informática | IFPI">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-about">Sobre (Resumo)</label>
+                        <textarea id="edit-about" rows="3" placeholder="Escreva um breve resumo sobre seus interesses e projetos.">Estudante de Informática com foco em desenvolvimento de sistemas e pesquisa em Inteligência Artificial.</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Acessos Rápidos (Links)</label>
+                        <input type="email" id="edit-email" placeholder="E-mail Institucional" value="capau.2023120iipi0021@aluno.ifpi.edu.br">
+                        <input type="url" id="edit-social" placeholder="Link da Rede Social (Ex: Instagram)" value="https://instagram.com/ghenrique.x">
+                        <input type="tel" id="edit-whatsapp" placeholder="WhatsApp (DDD+Número)" value="5589994451530">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="post-submit-btn" id="save-profile-btn">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="full-profile-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h2 id="modal-full-profile-name">Perfil de Gabriel Henrique</h2>
+                <button class="close-btn" id="close-full-profile-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body profile-page-content">
+                
+                <div class="card full-profile-header-card">
+                    <div class="cover" style="height: 120px; background: var(--color-primary);"></div>
+                    <div class="profile-main-info">
+                        <img id="full-profile-avatar" src="/LinkDif/Imagens_Perf/download.png" alt="Foto de Perfil">
+                        <div class="profile-text-content">
+                            <h3 id="full-profile-name-text">Gabriel Henrique</h3>
+                            <p id="full-profile-role-text">Aluno de Informática | IFPI</p>
+                            <small class="location"><i class="fas fa-map-marker-alt"></i> Teresina, PI</small>
+                            <div class="profile-actions-full">
+                                <button class="post-submit-btn" style="padding: 6px 15px;"><i class="fas fa-plus"></i> Conectar</button>
+                                <button class="btn-secondary" style="background-color: var(--bg-hover); color: var(--text-primary); border-radius: 20px; padding: 6px 15px;">Mensagem</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card full-profile-section">
+                    <h4><i class="fas fa-info-circle"></i> Sobre</h4>
+                    <p id="full-profile-about-text">Estudante de Informática com foco em desenvolvimento de sistemas e pesquisa em Inteligência Artificial.</p>
+                </div>
+
+                <div class="card full-profile-section">
+                    <h4><i class="fas fa-chart-bar"></i> Estatísticas e Links</h4>
+                    <div class="stats-and-links">
+                        <div class="profile-stats-full">
+                            <p>Visualizações de Perfil <span>28</span></p>
+                            <p>Impressões de Postagens <span>305</span></p>
+                        </div>
+                        <div class="access-card full-access-card">
+                            <ul>
+                                <li><a id="full-access-email" href="mailto:capau.2023120iipi0021@aluno.ifpi.edu.br?subject=Olá&body=Gostaria%20de%20entrar%20em%20contato"><i class="fas fa-envelope"></i> E-mail Institucional</a></li>
+                                
+                                <li><a id="full-access-social" href="https://instagram.com/ghenrique.x"><i class="fas fa-share-alt"></i> Rede Social (Instagram)</a></li>
+                                
+                                <li><a id="full-access-whatsapp" href="https://wa.me/5589994451530"><i class="fab fa-whatsapp"></i> Contato WhatsApp</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card full-profile-section">
+                    <h4><i class="fas fa-lightbulb"></i> Projetos e Experiência</h4>
+                    <div class="experience-item">
+                        <h5>Projeto: Otimização de Algoritmos de Busca</h5>
+                        <p class="role-time">Desenvolvedor Junior | 2024 - Presente</p>
+                        <p class="description">Aplicação de técnicas de Machine Learning para aprimorar a eficiência e velocidade dos algoritmos em um ambiente de big data. (PIBIC)</p>
+                    </div>
+                    <hr>
+                    <div class="experience-item">
+                        <h5>Empresa Junior: IFTECH Solutions</h5>
+                        <p class="role-time">Membro do time de Back-end | 2023</p>
+                        <p class="description">Criação de APIs RESTful utilizando Python/Django para atender clientes internos e externos do campus.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Esta é uma simulação da página de perfil completo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="settings-modal" class="modal" aria-hidden="true">
+        <div class="modal-content" style="max-width: 600px;">
+            <div class="modal-header">
+                <h2>Configurações e Privacidade</h2>
+                <button class="close-btn" id="close-settings-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h4><i class="fas fa-user-shield"></i> Privacidade</h4>
+                    <div class="setting-item">
+                        <label for="profile-visibility">Visibilidade do Perfil</label>
+                        <select id="profile-visibility">
+                            <option>Público (Todos)</option>
+                            <option>Somente Conexões</option>
+                            <option>Privado</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="message-requests">Permitir solicitações de mensagens</label>
+                        <input type="checkbox" id="message-requests" checked>
+                    </div>
+                </div>
+                
+                <hr class="settings-separator">
+
+                <div class="settings-section">
+                    <h4><i class="fas fa-desktop"></i> Preferências de Interface</h4>
+                    <div class="setting-item">
+                        <label for="theme-preference">Modo de Exibição</label>
+                        <select id="theme-preference">
+                            <option value="light">Claro</option>
+                            <option value="dark">Escuro</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="language-preference">Idioma</label>
+                        <select id="language-preference">
+                            <option>Português (Brasil)</option>
+                            <option>English (US)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <hr class="settings-separator">
+
+                <div class="settings-section">
+                    <h4><i class="fas fa-lock"></i> Segurança da Conta</h4>
+                    <a href="#" class="setting-link"><i class="fas fa-key"></i> Alterar Senha</a>
+                    <a href="#" class="setting-link"><i class="fas fa-id-card"></i> Gerenciar Dispositivos Logados</a>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                 <button class="post-submit-btn" id="save-settings-btn">Salvar Configurações</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/LinkDif/Home/Scripts/script.js"></script>
+</body>
+</html>
