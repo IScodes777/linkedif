@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linkedif | Login e Cadastro - Prof(a)</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        
+        <link rel="stylesheet" href="/LinkDif/Home/Styles/stayle.css"> 
+        <link rel="stylesheet" href="/LinkDif/Home/Styles/Cad_styles.css">
+    </head>
+    <body class="auth-page" data-theme="dark">
+        
+        <button class="theme-toggle-btn" id="theme-toggle" type="button" aria-label="Alternar Modo Claro ou Escuro">
+            <i class="fas fa-sun"></i> 
+            Tema
+        </button>
+        
+        <div class="auth-container">
+            <div class="auth-header">
+                <a href="/LinkDif/Home/index.html" class="logo">
+                    <i class="fas fa-network-wired"></i> Link<span>dif</span>
+                </a>
+                <h2 id="auth-title">Faça Login</h2>
+                <p id="auth-subtitle">Acesse o ambiente de projetos e rede institucional.</p>
+            </div>
+
+            <form id="login-form" class="auth-form active">
+                
+                <button type="button" class="auth-google-btn" id="google-login-btn">
+                    <i class="fab fa-google"></i> Entrar com Google
+                </button>
+                
+                <div class="separator">ou</div>
+                
+                <div class="form-group" id="login-email-group">
+                    <label for="login-email">E-mail ou Usuário</label>
+                    <input type="email" id="login-email" placeholder="seu.nome@prof(a).ifpi.edu.br" required 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <span class="error-message" id="login-email-error">Formato de e-mail inválido.</span>
+                </div>
+                
+                <div class="form-group" id="login-password-group">
+                    <label for="login-password">Senha</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="login-password" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                        <i class="fas fa-eye toggle-password" data-target="login-password"></i>
+                    </div>
+                    <span class="error-message" id="login-password-error">Senha incorreta.</span>
+                </div>
+                
+                <div class="checkbox-group">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Lembrar-me</label>
+                    </div>
+                    <a href="#" style="color:var(--text-secondary);">Esqueci minha senha</a>
+                </div>
+
+                <label for="Usuario">Entrar Como:</label>
+
+                <div class="seletor">
+                    <div class="deslizante" id="indicador"></div>
+                    <button class="opcao" onclick="moverBarra(this)">Aluno</button>
+                    <button class="opcao  selecionado" onclick="moverBarra(this)">Professor</button>
+                </div>
+
+                <script src="Scripts/Usuario.js"></script>
+
+                <button type="submit" class="auth-submit-btn" id="login-submit-btn" disabled>Entrar</button>
+
+            </form>
+
+            <form id="Fot-Perfil">
+                <div>
+                    
+                </div>
+            </form>
+
+            <form id="register-form" class="auth-form">
+                <div class="form-group" id="register-name-group">
+                    <label for="register-name">Nome Completo</label>
+                    <input type="text" id="register-name" placeholder="Ex: Maria da Silva" required>
+                    <span class="error-message" id="register-name-error">O nome é obrigatório.</span>
+                </div>
+
+                <div class="form-group" id="register-name-group">
+                    <label for="register-name">Idade</label>
+                    <input type="text" id="register-name" placeholder="Ex: 30" required>
+                    <span class="error-message" id="register-name-error">A idade é obrigatório.</span>
+                </div>
+
+                <div class="form-group" id="register-name-group">
+                    <label for="register-name">Registro Geral - CPF</label>
+                    <input type="text" id="register-name" placeholder="Ex: 000.000.000-00" required>
+                    <span class="error-message" id="register-name-error">O CPF é obrigatório.</span>
+                </div>
+
+                <div class="form-group" id="register-name-group">
+                    <label for="register-name">Componente de Ensino</label>
+                    <input type="text" id="register-name" placeholder="Ex: Robótica" required>
+                    <span class="error-message" id="register-name-error">A área de ensino é obrigatório.</span>
+                </div>
+                
+                <div class="form-group" id="register-email-group">
+                    <label for="register-email">E-mail Institucional</label>
+                    <input type="email" id="register-email" placeholder="seu.nome@Prof(a).ifpi.edu.br" required
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <span class="error-message" id="register-email-error">Formato de e-mail inválido ou já cadastrado.</span>
+                </div>
+                
+                <div class="form-group" id="register-password-group">
+                    <label for="register-password">Crie uma Senha</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="register-password" placeholder="Mínimo 6 caracteres (letras e números)" minlength="6" required>
+                        <i class="fas fa-eye toggle-password" data-target="register-password"></i>
+                    </div>
+                    <span class="error-message" id="register-password-error">A senha deve ter no mínimo 6 caracteres.</span>
+                </div>
+                
+                <div class="form-group" id="confirm-password-group">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="confirm-password" placeholder="Repita a senha acima" minlength="6" required>
+                        <i class="fas fa-eye toggle-password" data-target="confirm-password"></i>
+                    </div>
+                    <span class="error-message" id="confirm-password-error">A confirmação de senha não confere.</span>
+                </div>
+                
+                <div class="checkbox-group" style="margin-top: 5px;">
+                    <div class="remember-me">
+                        <input type="checkbox" id="accept-terms" required>
+                        <label for="accept-terms">Eu aceito os <a href="#">Termos de Uso</a> e <a href="#">Política de Privacidade</a></label>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-submit-btn" id="register-submit-btn" disabled>Criar Conta</button>
+            </form>
+
+            <div class="auth-footer-links">
+                <span id="toggle-message">Novo no Linkedif?</span>
+                <a href="#" id="toggle-auth-mode">Crie sua conta</a>
+            </div>
+        </div>
+        
+        <script src="Scripts/Usuarios.js"></script>
+        <script src="Scripts/Cadastros.js"></script>
+
+    </body>
+</html>

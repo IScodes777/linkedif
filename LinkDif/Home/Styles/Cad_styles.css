@@ -1,0 +1,294 @@
+/* Estilos de Cores e Fundo */
+        body.auth-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: var(--bg-page);
+            padding: 20px;
+        }
+
+        /* Variáveis de Tema (Adaptar ao seu stayle.css se necessário) */
+        :root[data-theme="light"] {
+            --bg-page: #f0f2f5;
+            --bg-card: #ffffff;
+            --text-primary: #1c1e21;
+            --text-secondary: #606770;
+            --color-primary: #0a66c2;
+            --color-primary-transparent: rgba(10, 102, 194, 0.2);
+            --color-secondary: #ff4d4f;
+            --border-light: #ddd;
+            --border-medium: #c3c6c9;
+            --bg-input: #f7f7f7;
+            --bg-hover: #e4e6eb;
+            --shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover-deep: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        :root[data-theme="dark"] {
+            --bg-page: #18191a;
+            --bg-card: #242526;
+            --text-primary: #e4e6eb;
+            --text-secondary: #b0b3b8;
+            --color-primary: #0a66c2;
+            --color-primary-transparent: rgba(10, 102, 194, 0.3);
+            --color-secondary: #ff7875;
+            --border-light: #3a3b3c;
+            --border-medium: #4a4b4c;
+            --bg-input: #3a3b3c;
+            --bg-hover: #4e4f50;
+            --shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-hover-deep: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+        
+        .auth-container {
+            background-color: var(--bg-card);
+            padding: 45px; 
+            border-radius: 12px; 
+            box-shadow: var(--shadow-deep); 
+            width: 100%;
+            max-width: 440px; 
+            transition: background-color 0.3s, box-shadow 0.3s ease;
+        }
+        
+        .auth-container:hover {
+            box-shadow: var(--shadow-hover-deep);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 35px; 
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--color-primary);
+        }
+        .auth-header h2, .auth-header p {
+            color: var(--text-primary);
+            margin-top: 10px;
+        }
+        
+        /* Botão de Tema */
+        .theme-toggle-btn {
+            position: absolute; 
+            top: 20px; 
+            right: 20px;
+            background-color: var(--bg-card);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .theme-toggle-btn:hover {
+            background-color: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        /* Botão Social (Google) */
+        .auth-google-btn {
+            width: 100%;
+            padding: 12px; 
+            border: 1px solid var(--border-medium); 
+            border-radius: 8px; 
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+            margin-bottom: 25px; 
+            
+            background-color: var(--bg-input); 
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .auth-google-btn:hover {
+            background-color: var(--bg-hover);
+            border-color: var(--color-primary);
+        }
+        .auth-google-btn .fab.fa-google {
+            color: #DB4437; 
+            font-size: 1.3rem; 
+        }
+        .auth-google-btn:disabled {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
+        /* Divisor "ou" */
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .separator:not(:empty)::before {
+            margin-right: .5em;
+        }
+        .separator:not(:empty)::after {
+            margin-left: .5em;
+        }
+
+
+        /* Estilos de Formulário - Campo de Senha com Ícone */
+        .form-group {
+            margin-bottom: 10px; 
+            position: relative; 
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: var(--text-secondary); 
+            margin-bottom: 5px;
+        }
+
+        .password-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-group input:not([type="checkbox"]) {
+            width: 100%;
+            padding: 14px 12px; 
+            border: 1px solid var(--border-light);
+            border-radius: 8px; 
+            background-color: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1.05rem; 
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--color-primary);
+            background-color: var(--bg-card);
+            outline: 3px solid var(--color-primary-transparent); 
+            box-shadow: none;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+        .toggle-password:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Checkbox e Lembrar-me */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        .checkbox-group label a {
+             color: var(--color-primary);
+             text-decoration: none;
+        }
+
+        /* Botão Principal */
+        .auth-submit-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px; 
+            font-weight: 300;
+            font-size: 1.1rem; 
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+            margin-top: 30px; 
+            background-color: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 10px var(--color-primary-transparent); 
+        }
+
+        .auth-submit-btn:hover:not(:disabled) {
+            opacity: 0.9;
+            background-color: color-mix(in srgb, var(--color-primary) 80%, black);
+        }
+
+        .auth-submit-btn:disabled {
+            background-color: var(--bg-hover);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            opacity: 0.6;
+            box-shadow: none;
+        }
+
+       .seletor {
+            position: relative;
+            display: flex;
+            width: 270px;
+            height: 36px;
+            background-color: #e0e0e0;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .opcao {
+            flex: 1;
+            border: none;
+            background: none;
+            font-size: 16px;
+            z-index: 1;
+            cursor: pointer;
+            color: #333;
+            transition: color 0.3s ease;
+         }
+
+        .opcao.selecionado {
+            color: white;
+            font-weight: bold;
+        }
+
+        .deslizante {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-color: #0cc203;
+            border-radius: 5px;
+            transition: left 0.4s ease;
+            z-index: 0;
+        }
+
+        
+        /* Mensagem de Erro e Footer */
+        .error-message { color: var(--color-secondary); font-size: 0.75rem; margin-top: 5px; display: none; font-weight: 500; }
+        .form-group.invalid input { border-color: var(--color-secondary) !important; }
+        .form-group.invalid .error-message { display: block; }
+        .auth-footer-links { text-align: center; margin-top: 30px; font-size: 0.95rem; color: var(--text-secondary); }
+        .auth-form { display: none; }
+        .auth-form.active { display: block; }

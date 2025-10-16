@@ -3,267 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linkedif | Login e Cadastro</title>
+    <title>Linkedif | Login e Cadastro - Aluno</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <link rel="stylesheet" href="/LinkDif/Home/Styles/stayle.css"> 
+    <link rel="stylesheet" href="/LinkDif/Home/Styles/Cad_styles.css">
     
-    <style>
-        /* Estilos de Cores e Fundo */
-        body.auth-page {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            background-color: var(--bg-page);
-            padding: 20px;
-        }
-
-        /* Variáveis de Tema (Adaptar ao seu stayle.css se necessário) */
-        :root[data-theme="light"] {
-            --bg-page: #f0f2f5;
-            --bg-card: #ffffff;
-            --text-primary: #1c1e21;
-            --text-secondary: #606770;
-            --color-primary: #0a66c2;
-            --color-primary-transparent: rgba(10, 102, 194, 0.2);
-            --color-secondary: #ff4d4f;
-            --border-light: #ddd;
-            --border-medium: #c3c6c9;
-            --bg-input: #f7f7f7;
-            --bg-hover: #e4e6eb;
-            --shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --shadow-hover-deep: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-        :root[data-theme="dark"] {
-            --bg-page: #18191a;
-            --bg-card: #242526;
-            --text-primary: #e4e6eb;
-            --text-secondary: #b0b3b8;
-            --color-primary: #0a66c2;
-            --color-primary-transparent: rgba(10, 102, 194, 0.3);
-            --color-secondary: #ff7875;
-            --border-light: #3a3b3c;
-            --border-medium: #4a4b4c;
-            --bg-input: #3a3b3c;
-            --bg-hover: #4e4f50;
-            --shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.4);
-            --shadow-hover-deep: 0 8px 16px rgba(0, 0, 0, 0.6);
-        }
-        
-        .auth-container {
-            background-color: var(--bg-card);
-            padding: 45px; 
-            border-radius: 12px; 
-            box-shadow: var(--shadow-deep); 
-            width: 100%;
-            max-width: 440px; 
-            transition: background-color 0.3s, box-shadow 0.3s ease;
-        }
-        
-        .auth-container:hover {
-            box-shadow: var(--shadow-hover-deep);
-        }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: 35px; 
-        }
-        
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-        }
-        .logo span {
-            color: var(--color-primary);
-        }
-        .auth-header h2, .auth-header p {
-            color: var(--text-primary);
-            margin-top: 10px;
-        }
-        
-        /* Botão de Tema */
-        .theme-toggle-btn {
-            position: absolute; 
-            top: 20px; 
-            right: 20px;
-            background-color: var(--bg-card);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-light);
-            padding: 8px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background-color 0.2s, color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .theme-toggle-btn:hover {
-            background-color: var(--bg-hover);
-            color: var(--text-primary);
-        }
-
-        /* Botão Social (Google) */
-        .auth-google-btn {
-            width: 100%;
-            padding: 12px; 
-            border: 1px solid var(--border-medium); 
-            border-radius: 8px; 
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.2s, border-color 0.2s;
-            margin-bottom: 25px; 
-            
-            background-color: var(--bg-input); 
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        .auth-google-btn:hover {
-            background-color: var(--bg-hover);
-            border-color: var(--color-primary);
-        }
-        .auth-google-btn .fab.fa-google {
-            color: #DB4437; 
-            font-size: 1.3rem; 
-        }
-        .auth-google-btn:disabled {
-            opacity: 0.7;
-            cursor: wait;
-        }
-
-        /* Divisor "ou" */
-        .separator {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 20px 0;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-        .separator::before,
-        .separator::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid var(--border-light);
-        }
-        .separator:not(:empty)::before {
-            margin-right: .5em;
-        }
-        .separator:not(:empty)::after {
-            margin-left: .5em;
-        }
-
-
-        /* Estilos de Formulário - Campo de Senha com Ícone */
-        .form-group {
-            margin-bottom: 22px; 
-            position: relative; 
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-secondary); 
-            margin-bottom: 5px;
-        }
-
-        .password-input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .form-group input:not([type="checkbox"]) {
-            width: 100%;
-            padding: 14px 12px; 
-            border: 1px solid var(--border-light);
-            border-radius: 8px; 
-            background-color: var(--bg-input);
-            color: var(--text-primary);
-            font-size: 1.05rem; 
-            transition: border-color 0.2s, background-color 0.2s;
-        }
-        .form-group input:focus {
-            border-color: var(--color-primary);
-            background-color: var(--bg-card);
-            outline: 3px solid var(--color-primary-transparent); 
-            box-shadow: none;
-        }
-        
-        .toggle-password {
-            position: absolute;
-            right: 12px;
-            cursor: pointer;
-            color: var(--text-secondary);
-            transition: color 0.2s;
-        }
-        .toggle-password:hover {
-            color: var(--color-primary);
-        }
-        
-        /* Checkbox e Lembrar-me */
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-        .checkbox-group label a {
-             color: var(--color-primary);
-             text-decoration: none;
-        }
-
-        /* Botão Principal */
-        .auth-submit-btn {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 8px; 
-            font-weight: 600;
-            font-size: 1.1rem; 
-            cursor: pointer;
-            transition: background-color 0.2s, opacity 0.2s;
-            margin-top: 30px; 
-            background-color: var(--color-primary);
-            color: white;
-            box-shadow: 0 4px 10px var(--color-primary-transparent); 
-        }
-
-        .auth-submit-btn:hover:not(:disabled) {
-            opacity: 0.9;
-            background-color: color-mix(in srgb, var(--color-primary) 80%, black);
-        }
-
-        .auth-submit-btn:disabled {
-            background-color: var(--bg-hover);
-            color: var(--text-secondary);
-            cursor: not-allowed;
-            opacity: 0.6;
-            box-shadow: none;
-        }
-
-        /* Mensagem de Erro e Footer */
-        .error-message { color: var(--color-secondary); font-size: 0.75rem; margin-top: 5px; display: none; font-weight: 500; }
-        .form-group.invalid input { border-color: var(--color-secondary) !important; }
-        .form-group.invalid .error-message { display: block; }
-        .auth-footer-links { text-align: center; margin-top: 30px; font-size: 0.95rem; color: var(--text-secondary); }
-        .auth-form { display: none; }
-        .auth-form.active { display: block; }
-
-    </style>
 </head>
 <body class="auth-page" data-theme="dark">
     
@@ -313,7 +59,24 @@
                 <a href="#" style="color:var(--text-secondary);">Esqueci minha senha</a>
             </div>
 
+            <label for="Usuario">Entrar Como:</label>
+
+            <div class="seletor">
+                <div class="deslizante" id="indicador"></div>
+                <button class="opcao selecionado" onclick="moverBarra(this)">Aluno</button>
+                <button class="opcao" onclick="moverBarra(this)"></a>Professor</button>
+            </div>
+
+           <script src="Scripts/Usuario.js"></script>
+
             <button type="submit" class="auth-submit-btn" id="login-submit-btn" disabled>Entrar</button>
+
+        </form>
+
+        <form id="Fot-Perfil">
+            <div>
+                
+            </div>
         </form>
 
         <form id="register-form" class="auth-form">
@@ -321,6 +84,24 @@
                 <label for="register-name">Nome Completo</label>
                 <input type="text" id="register-name" placeholder="Ex: Maria da Silva" required>
                 <span class="error-message" id="register-name-error">O nome é obrigatório.</span>
+            </div>
+
+            <div class="form-group" id="register-name-group">
+                <label for="register-name">Idade</label>
+                <input type="text" id="register-name" placeholder="Ex: 17 " required>
+                <span class="error-message" id="register-name-error">A idade é obrigatório.</span>
+            </div>
+
+            <div class="form-group" id="register-name-group">
+                <label for="register-name">Registro Geral - CPF</label>
+                <input type="text" id="register-name" placeholder="Ex: 000.000.000-00" required>
+                <span class="error-message" id="register-name-error">O CPF é obrigatório.</span>
+            </div>
+
+            <div class="form-group" id="register-name-group">
+                <label for="register-name">Curso</label>
+                <input type="text" id="register-name" placeholder="Ex: Informática" required>
+                <span class="error-message" id="register-name-error">O Curso é obrigatório.</span>
             </div>
             
             <div class="form-group" id="register-email-group">
@@ -364,195 +145,6 @@
         </div>
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- 0. VERIFICAR STATUS DE LOGIN ---
-            // Se o usuário já estiver logado (sessão ativa), redireciona para a página principal
-            if (sessionStorage.getItem('user_logged_in') === 'true') {
-                window.location.href = '/LinkDif/Home/index.html'; 
-                return; // Para a execução do script
-            }
-
-            const loginForm = document.getElementById('login-form');
-            const registerForm = document.getElementById('register-form');
-            const toggleAuthMode = document.getElementById('toggle-auth-mode');
-            const authTitle = document.getElementById('auth-title');
-            const authSubtitle = document.getElementById('auth-subtitle');
-            const toggleMessage = document.getElementById('toggle-message');
-            const googleLoginBtn = document.getElementById('google-login-btn');
-            
-            // --- LÓGICA DE TEMA ---
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const savedTheme = localStorage.getItem('theme') || 'dark'; 
-            document.body.setAttribute('data-theme', savedTheme);
-            const updateThemeIcon = (theme) => {
-                 themeToggleBtn.querySelector('i').className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-            };
-            themeToggleBtn.addEventListener('click', () => {
-                const currentTheme = document.body.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                document.body.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                updateThemeIcon(newTheme);
-            });
-            updateThemeIcon(savedTheme);
-            
-            // --- LÓGICA DE MOSTRAR/ESCONDER SENHA ---
-            document.querySelectorAll('.toggle-password').forEach(icon => {
-                icon.addEventListener('click', () => {
-                    const targetId = icon.dataset.target;
-                    const targetInput = document.getElementById(targetId);
-                    
-                    if (targetInput.type === 'password') {
-                        targetInput.type = 'text';
-                        icon.classList.remove('fa-eye');
-                        icon.classList.add('fa-eye-slash');
-                    } else {
-                        targetInput.type = 'password';
-                        icon.classList.remove('fa-eye-slash');
-                        icon.classList.add('fa-eye');
-                    }
-                });
-            });
-
-            let isLoginMode = true;
-
-            // --- LÓGICA DE ALTERNÂNCIA (Login <-> Cadastro) ---
-            toggleAuthMode.addEventListener('click', (e) => {
-                e.preventDefault();
-                isLoginMode = !isLoginMode;
-
-                [loginForm, registerForm].forEach(form => {
-                    form.reset();
-                    form.querySelectorAll('.form-group.invalid').forEach(group => group.classList.remove('invalid'));
-                    form.querySelectorAll('.toggle-password').forEach(icon => {
-                        icon.classList.remove('fa-eye-slash');
-                        icon.classList.add('fa-eye');
-                        document.getElementById(icon.dataset.target).type = 'password';
-                    });
-                });
-                document.getElementById('login-submit-btn').disabled = true;
-                document.getElementById('register-submit-btn').disabled = true;
-
-                if (isLoginMode) {
-                    loginForm.classList.add('active');
-                    registerForm.classList.remove('active');
-                    authTitle.textContent = 'Faça Login';
-                    authSubtitle.textContent = 'Acesse o ambiente de projetos e rede institucional.';
-                    toggleMessage.textContent = 'Novo no Linkedif?';
-                    toggleAuthMode.textContent = 'Crie sua conta';
-                } else {
-                    loginForm.classList.remove('active');
-                    registerForm.classList.add('active');
-                    authTitle.textContent = 'Crie sua Conta';
-                    authSubtitle.textContent = 'Junte-se à nossa rede de pesquisa e projetos.';
-                    toggleMessage.textContent = 'Já tem uma conta?';
-                    toggleAuthMode.textContent = 'Faça login';
-                }
-            });
-            
-            // --- SIMULAÇÃO DE LOGIN COM GOOGLE ---
-            googleLoginBtn.addEventListener('click', () => {
-                googleLoginBtn.disabled = true;
-                googleLoginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Conectando ao Google...';
-
-                setTimeout(() => {
-                    // Armazena o login na sessão
-                    sessionStorage.setItem('user_logged_in', 'true');
-                    alert("Autenticação com Google bem-sucedida! Redirecionando...");
-                    window.location.href = '/LinkDif/Home/index.html'; 
-                }, 1500); 
-            });
-            
-            // --- LÓGICA DE VALIDAÇÃO E SUBMISSÃO DE LOGIN ---
-            const loginEmailInput = document.getElementById('login-email');
-            const loginPasswordInput = document.getElementById('login-password');
-            const loginSubmitBtn = document.getElementById('login-submit-btn');
-
-            const checkLoginFields = () => {
-                const emailValid = loginEmailInput.value.length > 0 && loginEmailInput.checkValidity();
-                const passwordValid = loginPasswordInput.value.length >= 6;
-                
-                loginSubmitBtn.disabled = !(emailValid && passwordValid);
-            };
-            
-            [loginEmailInput, loginPasswordInput].forEach(input => {
-                input.addEventListener('input', checkLoginFields);
-            });
-
-            loginForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                document.getElementById('login-password-group').classList.remove('invalid'); // Limpa erro anterior
-                
-                // Simulação: Apenas o login 'teste@exemplo.com' com senha '123456' funciona
-                if (loginPasswordInput.value !== '123456' || loginEmailInput.value.toLowerCase() !== 'teste@exemplo.com') { 
-                    document.getElementById('login-password-error').textContent = 'E-mail ou senha incorretos.';
-                    document.getElementById('login-password-group').classList.add('invalid');
-                    return;
-                }
-                
-                // Login bem-sucedido
-                sessionStorage.setItem('user_logged_in', 'true');
-                alert("Login simulado bem-sucedido! Redirecionando para o Feed.");
-                window.location.href = '/LinkDif/Home/index.html'; 
-            });
-
-
-            // --- LÓGICA DE VALIDAÇÃO E SUBMISSÃO DE CADASTRO (COMPLETO) ---
-            const registerNameInput = document.getElementById('register-name');
-            const registerEmailInput = document.getElementById('register-email');
-            const registerPasswordInput = document.getElementById('register-password');
-            const confirmPasswordInput = document.getElementById('confirm-password');
-            const acceptTermsCheckbox = document.getElementById('accept-terms');
-            const registerSubmitBtn = document.getElementById('register-submit-btn');
-
-            const checkRegisterFields = () => {
-                // Validação de nome
-                const nameValid = registerNameInput.value.trim().length > 0;
-                registerNameInput.parentElement.classList.toggle('invalid', !nameValid && registerNameInput.value.length > 0);
-
-                // Validação de e-mail
-                const emailValid = registerEmailInput.checkValidity();
-                registerEmailInput.parentElement.classList.toggle('invalid', !emailValid && registerEmailInput.value.length > 0);
-
-                // Validação de senhas e confirmação
-                const passwordValid = registerPasswordInput.value.length >= 6;
-                const passwordsMatch = registerPasswordInput.value === confirmPasswordInput.value;
-
-                registerPasswordInput.parentElement.classList.toggle('invalid', !passwordValid && registerPasswordInput.value.length > 0);
-                confirmPasswordInput.parentElement.classList.toggle('invalid', !passwordsMatch && confirmPasswordInput.value.length > 0);
-
-                // Habilita/Desabilita o botão
-                registerSubmitBtn.disabled = !(
-                    nameValid && 
-                    emailValid && 
-                    passwordValid && 
-                    passwordsMatch && 
-                    acceptTermsCheckbox.checked
-                );
-            };
-
-            // Adiciona listeners para todos os campos do cadastro
-            [registerNameInput, registerEmailInput, registerPasswordInput, confirmPasswordInput, acceptTermsCheckbox].forEach(input => {
-                input.addEventListener('input', checkRegisterFields);
-            });
-
-            registerForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Revalida a confirmação final
-                if (registerPasswordInput.value !== confirmPasswordInput.value) {
-                    confirmPasswordInput.parentElement.classList.add('invalid');
-                    return;
-                }
-
-                alert("Cadastro simulado bem-sucedido! Redirecionando para o Feed.");
-                
-                // Login automático após o cadastro
-                sessionStorage.setItem('user_logged_in', 'true');
-                window.location.href = '/LinkDif/Home/index.html'; 
-            });
-        });
-    </script>
+    <script src="Scripts/Cadastros.js"></script>
 </body>
 </html>
