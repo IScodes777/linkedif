@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- LÓGICA DE TEMA ---
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark'; 
+    const savedTheme = localStorage.getItem('theme') || 'light'; 
     document.body.setAttribute('data-theme', savedTheme);
     const updateThemeIcon = (theme) => {
-            themeToggleBtn.querySelector('i').className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            themeToggleBtn.querySelector('i').className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
     };
     themeToggleBtn.addEventListener('click', () => {
         const currentTheme = document.body.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'ligth' : 'dark';
         document.body.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         updateThemeIcon(newTheme);
